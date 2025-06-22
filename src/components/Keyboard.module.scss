@@ -1,0 +1,38 @@
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  &-button {
+      padding: 1.20rem 0.8rem;
+      font-size: 0.80rem;
+      color: var(--color-text);
+      font-weight: bold;
+      background: var(--color-keyboard-bg);
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      min-width: 2.75rem;
+      text-transform: uppercase;
+
+      transition: transform 0.2s ease-in-out;
+
+      &:hover {
+        transform: translateY(-0.0625rem);
+      }
+
+      &.wide {
+        min-width: 4.375rem;
+        letter-spacing: -0.0625rem;
+      }
+  
+      svg {
+        vertical-align: middle;
+      }
+  }
+}

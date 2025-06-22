@@ -1,0 +1,25 @@
+.box-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.box {
+  width: 3.75rem;
+  height: 3.75rem;
+  border: 0.125rem solid var(--color-border);
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &.valid {
+    border-color: var(--color-valid);
+  }
+
+  &.invalid {
+    border-color: var(--color-invalid);
+  }
+}

@@ -1,0 +1,66 @@
+.themeSwitcher {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  padding: 0.625rem 1rem;
+  border: none;
+  border-radius: 1.5rem;
+  
+  font-size: 0.875rem;
+  font-weight: 500;
+  
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0.5rem);
+
+  background: var(--color-background);
+  color: var(--color-text);
+  border: 0.0625rem solid rgba(209, 213, 219, 0.3);
+
+  &:hover {
+    transform: translateY(-0.0625rem);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.15);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.1875rem rgba(59, 130, 246, 0.3);
+  }
+}
+
+.icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.text {
+  font-size: 0.875rem;
+  line-height: 1;
+}
+
+@media (max-width: 640px) {
+  .themeSwitcher {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8125rem;
+  }
+  
+  .icon {
+    font-size: 0.875rem;
+  }
+  
+  .text {
+    font-size: 0.8125rem;
+  }
+}
