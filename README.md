@@ -40,6 +40,20 @@ Choose the package manager that best fits your workflow. The project includes a 
 
 ## Getting Started
 
+### Environment Setup
+
+1. Copy the environment template:
+
+```bash
+cp .env.example .env
+```
+
+2. The default configuration should work out of the box, but you can modify `.env` if needed:
+
+```env
+VITE_DICTIONARY_API_BASE_URL=https://api.dictionaryapi.dev/api/v2/entries/en
+```
+
 ### Using pnpm (recommended)
 
 ```bash

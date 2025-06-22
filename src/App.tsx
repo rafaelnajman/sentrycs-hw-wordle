@@ -90,7 +90,8 @@ function App() {
 
 async function checkWordInDictionary(word: string): Promise<boolean> {
   console.log(`Checking if "${word}" is a valid word...`);
-  const response = await fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`);
+  const apiBaseUrl = import.meta.env.VITE_DICTIONARY_API_BASE_URL || "https://api.dictionaryapi.dev/api/v2/entries/en";
+  const response = await fetch(`${apiBaseUrl}/${word}`);
   return response.ok;
 }
 
