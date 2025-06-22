@@ -1,54 +1,82 @@
-# React + TypeScript + Vite
+# Word Game App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern word validation game built with React, TypeScript, and Vite. Players enter 5-letter words to test their vocabulary against a dictionary API.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **5-letter word validation**: Enter words and check if they exist in the English dictionary
+- **Dual input methods**: Use the on-screen keyboard or your physical keyboard
+- **Real-time feedback**: Visual indicators show word validity (valid/invalid states)
+- **Dark/Light theme**: Theme switcher for user preference
+- **Responsive design**: Works seamlessly on desktop and mobile devices
+- **Modern UI**: Clean, intuitive interface with smooth animations
 
-## Expanding the ESLint configuration
+## How to Play
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Type a 5-letter word using either:
+   - The virtual keyboard on screen
+   - Your physical keyboard (A-Z keys)
+2. Press Enter or click "ENTER" to submit your word
+3. The app will validate your word against an online dictionary
+4. Use Backspace or click "⌫" to delete letters
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Tech Stack
+
+- **React 18** with TypeScript for type safety
+- **Vite** for fast development and building
+- **SCSS Modules** for component-scoped styling
+- **Dictionary API** for word validation
+- **Custom event system** for keyboard/UI interaction
+- **React Icons** for UI elements
+
+## Package Manager
+
+This project supports both **pnpm** and **npm**:
+
+- **pnpm** (recommended): Faster installs, efficient disk usage, and strict dependency resolution
+- **npm**: Standard Node.js package manager, widely supported
+
+Choose the package manager that best fits your workflow. The project includes a `pnpm-lock.yaml` file, but you can safely use npm if preferred.
+
+## Getting Started
+
+### Using pnpm (recommended)
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Using npm
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```bash
+# Install dependencies
+npm install
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
 ```
+
+## Development
+
+This project uses:
+
+- TypeScript for type checking
+- ESLint for code linting
+- SCSS modules for styling
+- Vite for bundling and HMR
