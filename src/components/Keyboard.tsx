@@ -1,5 +1,5 @@
 import { useActionListener } from "../hooks/useActionListener";
-import { ActionEvent } from "../utils/events";
+import { ActionEvent } from "../types/events";
 import { MdOutlineBackspace } from "react-icons/md";
 import styles from "./Keyboard.module.scss";
 

@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useActionListener } from "./useActionListener";
-import { ActionEvent } from "../utils/events";
+import { ActionEvent } from "../types/events";
 
 export const useKeyboardInput = () => {
   const actionListener = useActionListener();

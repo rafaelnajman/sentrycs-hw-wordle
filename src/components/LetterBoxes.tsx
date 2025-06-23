@@ -1,5 +1,5 @@
 import styles from "./LetterBoxes.module.scss";
-import { GameStatus } from "../utils/gameStatus";
+import { GameStatus } from "../types/gameStatus";
 
 type Props = {
   letters: string[];

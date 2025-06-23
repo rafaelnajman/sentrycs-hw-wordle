@@ -1,18 +1,16 @@
-import { useGameState } from "./useGameState";
-import { useDictionary } from "./useDictionary";
-import { useWordValidation } from "./useWordValidation";
+import { useState, useEffect } from "react";
 import { useActionListener } from "./useActionListener";
-import { ActionEvent } from "../utils/events";
-import { GameStatus } from "../utils/gameStatus";
-import { useEffect } from "react";
+import { ActionEvent } from "../types/events";
+import { GameStatus } from "../types/gameStatus";
+import { validateWordLength, formatWord, canAddLetter } from "../utils/wordValidation";
+import { checkWordInDictionary } from "../api/dictionary";
 
 const WORD_LENGTH = Number(import.meta.env.VITE_WORD_LENGTH) || 5;
 
 export const useGameLogic = () => {
-  // Separate concerns into focused hooks
-  const { letters, setLetters, status, setStatus } = useGameState();
-  const { checkWordInDictionary } = useDictionary();
-  const { validateWordLength, formatWord, canAddLetter } = useWordValidation(WORD_LENGTH);
+  // Game state
+  const [letters, setLetters] = useState<string[]>([]);
+  const [status, setStatus] = useState<GameStatus>(GameStatus.IDLE);
 
   const actionListener = useActionListener();
 
