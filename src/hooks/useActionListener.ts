@@ -1,10 +1,8 @@
-import { MyActionListener } from "./MyActionListener";
+import { MyActionListener } from "../utils/MyActionListener";
 
-// Single global instance
 let globalActionListener: MyActionListener | null = null;
 
 export function useActionListener(): MyActionListener {
-  // Create instance only once, globally
   if (!globalActionListener) {
     globalActionListener = new MyActionListener();
   }
@@ -12,7 +10,6 @@ export function useActionListener(): MyActionListener {
   return globalActionListener;
 }
 
-// Optional: Reset function for testing
 export function resetActionListener(): void {
   globalActionListener = null;
 }
