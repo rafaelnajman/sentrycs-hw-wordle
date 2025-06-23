@@ -1,18 +1,19 @@
 import { useEffect, useState } from "react";
+import { Theme } from "../types/theme";
 import styles from "./ThemeSwitcher.module.scss";
 
 export function ThemeSwitcher() {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<Theme>(Theme.LIGHT);
 
   useEffect(() => {
-    const stored = localStorage.getItem("theme") as "light" | "dark" | null;
-    const preferred = stored || "light";
+    const stored = localStorage.getItem("theme") as Theme | null;
+    const preferred = stored || Theme.LIGHT;
     setTheme(preferred);
     document.documentElement.setAttribute("data-theme", preferred);
   }, []);
 
   const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
+    const newTheme = theme === Theme.LIGHT ? Theme.DARK : Theme.LIGHT;
     setTheme(newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("theme", newTheme);
@@ -22,10 +23,10 @@ export function ThemeSwitcher() {
     <button
       className={`${styles.themeSwitcher}`}
       onClick={toggleTheme}
-      aria-label={theme === "light" ? "Switch to dark mode" : "Switch to light mode"}
+      aria-label={theme === Theme.LIGHT ? "Switch to dark mode" : "Switch to light mode"}
     >
-      <span className={styles.icon}>{theme === "light" ? "🌙" : "☀️"}</span>
-      <span className={styles.text}>{theme === "light" ? "Dark" : "Light"}</span>
+      <span className={styles.icon}>{theme === Theme.LIGHT ? "🌙" : "☀️"}</span>
+      <span className={styles.text}>{theme === Theme.LIGHT ? "Dark" : "Light"}</span>
     </button>
   );
 }
