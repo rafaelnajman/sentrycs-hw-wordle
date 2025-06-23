@@ -1,14 +1,16 @@
 import styles from "./LetterBoxes.module.scss";
+import { GameStatus } from "../utils/gameStatus";
 
 type Props = {
   letters: string[];
-  status: "idle" | "valid" | "invalid";
+  status: GameStatus;
+  length?: number;
 };
 
-export default function LetterBoxes({ letters, status }: Props) {
+export default function LetterBoxes({ letters, status, length = 5 }: Props) {
   return (
     <div className={styles["box-container"]}>
-      {Array.from({ length: 5 }).map((_, i) => (
+      {Array.from({ length }).map((_, i) => (
         <div key={i} className={`${styles.box} ${styles[status]}`}>
           {letters[i] || ""}
         </div>
